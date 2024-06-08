@@ -2,24 +2,24 @@
 
 ## 1. 시연
 
-<img src="https://user-images.githubusercontent.com/71424677/insam_decipher_homescreen.png"/>
+<img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/insam_decipher_homescreen.png"/>
 
 인상 품질 판독기의 첫화면이다.
 
 ---
-<img src="https://user-images.githubusercontent.com/71424677/load_image.png"/>
+<img src="hhttps://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/load_image.png"/>
 
 다운받은 이미지에서 인삼 x-ray 사진을 불러올 수 있다.
 
 ---
 
-<img src="https://user-images.githubusercontent.com/71424677/loaded_image.png"/>
+<img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/loaded_image.png"/>
 
 각각의 품질을 가진 인삼 데이터를 불러온 화면이다.
 
 ---
 
-<img src="https://user-images.githubusercontent.com/71424677/predicted_image.png"/>
+<img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/predicted_image.png"/>
 
 predict 버튼을 클릭하면 인삼의 품질을 확인할 수 있다.
 
