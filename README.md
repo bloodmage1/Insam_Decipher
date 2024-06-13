@@ -7,7 +7,7 @@
 어플을 실행시켰을 때, 실행되는 인상 품질 판독기의 첫화면이다.
 
 ---
-<img src="hhttps://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/load_image.png"/>
+<img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/load_image.png"/>
 
 다운받은 이미지에서 인삼 x-ray 사진을 불러올 수 있다.
 
