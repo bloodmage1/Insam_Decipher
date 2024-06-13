@@ -46,9 +46,9 @@ from torch import nn
 from efficientnet_pytorch import EfficientNet
 from torchvision import transforms
 
-class CNN_Model(nn.Module):
+class Efficient_Model(nn.Module):
     def __init__(self, class_n, rate=0.2):
-        super(CNN_Model, self).__init__()
+        super(Efficient_Model, self).__init__()
         self.model = EfficientNet.from_pretrained('efficientnet-b7')
         self.dropout = nn.Dropout(rate)
         self.output_layer = nn.Linear(in_features=1000, out_features=class_n, bias=True)
@@ -64,7 +64,7 @@ mytransform = transforms.Compose([
 ])
 
 # 모델 불러오기
-model = CNN_Model(4).to('cuda')
+model = Efficient_Model(4).to('cuda')
 model.load_state_dict(torch.load('./best_model.pth'))
 model.eval()
 
