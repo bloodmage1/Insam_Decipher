@@ -1,29 +1,20 @@
 import sys
 sys.coinit_flags = 2
 
-import pythoncom
-import pyautogui
-
 from PySide6.QtWidgets import *
 from PySide6.QtGui import *
 from PySide6.QtCore import *
 
-from queue import Queue
-import threading
 from qt_material import apply_stylesheet
-import pyrealsense2 as rs
 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 
 from time import time, sleep
 import cv2
 import numpy as np
-from sklearn.cluster import DBSCAN
-import socket
-import io
 
 import warnings
 
@@ -74,7 +65,7 @@ class Insam_decipher(QMainWindow):
     def __init__(self, app):
         super().__init__()
         self.app = app
-        self.current_tip_index = 0  # 현재 팁의 인덱스를 추적하는 변수
+        self.current_tip_index = 0 
         self.tips = [
             "Tip: 여운형 선생님은 개성 인삼을 팔아 큰 이윤을 남겨 독립운동 자금으로 사용했습니다.",
             "Tip: 윤봉길 의사님은 상하이에서 인삼 행상을 하며 때를 기다렸습니다.",
@@ -214,10 +205,9 @@ class Insam_decipher(QMainWindow):
         return self.Management_group
     
     def Features_Tap(self):
-        Features_widget = QWidget()  # 탭을 담을 위젯
-        tab_widget = QTabWidget()  # QTabWidget 인스턴스 생성
-        Features_layout = QVBoxLayout(Features_widget)  # 메인 레이아웃 설정
-        ##
+        # Features_widget = QWidget() 
+        tab_widget = QTabWidget() 
+        # Features_layout = QVBoxLayout(Features_widget)  
         grown_plant_tab = QWidget()
         grown_plant_layout = QVBoxLayout()
         height_label = QLabel('식물 높이')
@@ -324,18 +314,17 @@ class Insam_decipher(QMainWindow):
         Tip_layout = QVBoxLayout(self.Tip_widget)
         Tip_layout.addWidget(self.Tip_label)
 
-        # 버튼을 오른쪽 아래로 정렬하기 위한 수평 레이아웃
         button_layout = QHBoxLayout()
-        button_layout.addStretch()  # 왼쪽에 공간 추가
-        button_layout.addWidget(self.next_button)  # 이제 버튼이 오른쪽에 위치함
+        button_layout.addStretch()  
+        button_layout.addWidget(self.next_button)  
 
-        Tip_layout.addLayout(button_layout)  # 수평 레이아웃을 메인 레이아웃에 추가
+        Tip_layout.addLayout(button_layout)  
 
         self.Tip_widget.setLayout(Tip_layout)
 
         return self.Tip_widget
     
-####### Function part ###########
+####### 함수 부분 ###########
     def Load_image(self):
         '''
         RGB IMAGE 불러오기를 클릭하여 
