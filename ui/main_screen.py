@@ -75,15 +75,6 @@ class InsamDecipher(QMainWindow):
         self.setGeometry(0, 0, 1000, 700)
         self.show()
 
-
-
-    # def Pimage_screen(self):
-    #     fig1 = Figure()
-    #     fig1.tight_layout(pad=0)
-    #     fig1.set_facecolor('#28282B')
-    #     self.This_is_screen = FigureCanvas(fig1)
-    #     return self.This_is_screen
-
     def main_screen(self):
         main_screen_widget = QWidget(self)
         main_screen_layout = QHBoxLayout(main_screen_widget)
@@ -112,15 +103,6 @@ class InsamDecipher(QMainWindow):
             self.image_displayed_rgb = True
         else:
             QMessageBox.warning(self, "알림", "이것은 이미지 파일이 아닙니다!!")
-
-    # def predict_image(self):
-    #     image = self.transform(self.image_file_rgb).unsqueeze(0).to('cuda')
-    #     with torch.no_grad():
-    #         output = self.model(image)
-    #         _, predicted = torch.max(output, 1)
-    #         label_mapping = {0: '상', 1: '중', 2: '하', 3: '최하'}
-    #         predicted_label = label_mapping[predicted.item()]
-    #     self.description_label.setText(f"이 인삼의 상태는 {predicted_label} 입니다.")
 
     def predict_image(self):
         predicted_label = predict_image(self.model, self.transform, self.image_file_rgb) 

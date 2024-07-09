@@ -18,7 +18,7 @@ def annotate_image(image, label):
     text_size = (text_bbox[2] - text_bbox[0], text_bbox[3] - text_bbox[1])
 
     margin = 200
-    image_width, image_height = image.size
+    image_width, _ = image.size
     box = [
         image_width - text_size[0] - 2 * margin,
         margin,

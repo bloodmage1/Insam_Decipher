@@ -12,9 +12,9 @@ class DescribeScreen(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent 
-        self.initUI()
+        self.UI초기화()
 
-    def initUI(self):
+    def UI초기화(self):
         describe_layout = QHBoxLayout(self)
 
         describe_layout.addWidget(self.PictureShapeScreen(), 2)

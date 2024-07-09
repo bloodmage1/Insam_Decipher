@@ -16,9 +16,9 @@ class ControllerScreen(QWidget):
     # def __init__(self, parent=None):
     def __init__(self, parent):
         super().__init__(parent)
-        self.initUI()
+        self.UI초기화()
 
-    def initUI(self):
+    def UI초기화(self):
         Controller_layout = QVBoxLayout(self)
 
         Controller_layout.addWidget(self.Load_Image_screen(), 2)

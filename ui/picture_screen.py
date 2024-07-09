@@ -5,9 +5,9 @@ from matplotlib.figure import Figure
 class PictureScreen(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.initUI(parent)
+        self.UI초기화(parent)
 
-    def initUI(self, parent):
+    def UI초기화(self, parent):
         Picture_Screen_layout = QVBoxLayout(self)
 
         # self.description_label = QLabel("이 인삼의 상태는 - 입니다.")
