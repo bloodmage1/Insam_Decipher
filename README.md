@@ -2,31 +2,35 @@
 
 ## 1. 시연
 
+<img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/play_video.gif"/>
+
+인삼의 품질을 측정하는 모습을 간략히 나타낸 영상입니다.
+
 <img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/insam_decipher_homescreen.png"/>
 
-어플을 실행시켰을 때, 실행되는 인상 품질 판독기의 첫화면이다.
+어플을 실행시켰을 때, 실행되는 인상 품질 판독기의 첫화면입니다.
 
 ---
 <img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/load_image.png"/>
 
-다운받은 이미지에서 인삼 x-ray 사진을 불러올 수 있다.
+다운받은 이미지에서 인삼 x-ray 사진을 불러올 수 있습니다.
 
 ---
 
 <img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/loaded_image.png"/>
 
-품질을 가진 인삼 데이터를 불러온 화면이다.
+품질을 가진 인삼 데이터를 불러온 화면입니다.
 
 ---
 
 <img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/predicted_image.png"/>
 
-predict 버튼을 클릭하면 인삼의 품질을 확인할 수 있다. 불러 온 사진에서는 해당 x-ray 사진 속 인삼의 등급이 최하인 것을 알 수 있다.
+predict 버튼을 클릭하면 인삼의 품질을 확인할 수 있다. 불러 온 사진에서는 해당 x-ray 사진 속 인삼의 등급이 최하인 것을 알 수 있습니다.
 
 ## 2. 개발환경
 
 - Window OS, Window 11
-- Python 3.8.7
+- Python 3.12.4
 - PySide6
 
 ## 3. 각 함수의 기능 설명
