@@ -29,7 +29,7 @@ def annotate_image(image, label):
     draw.rectangle(box, outline="red", width=30)  # 빨간 사각형 그리기
     draw.text((box[0] + margin-100, box[1] + margin-130), label, fill="red", font=font)  # 텍스트 삽입
 
-    stamp_cv = cv2.imread("./stamp.png", cv2.IMREAD_UNCHANGED)  #
+    stamp_cv = cv2.imread("./app_img/stamp.png", cv2.IMREAD_UNCHANGED)  #
     stamp_cv_resized = cv2.resize(stamp_cv, (300, 300))  # 크기 조정
 
     stamp_pil = Image.fromarray(cv2.cvtColor(stamp_cv_resized, cv2.COLOR_BGRA2RGBA))

@@ -71,7 +71,7 @@ class InsamDecipher(QMainWindow):
 
         apply_stylesheet(self.app, theme='dark_purple.xml')
         self.setWindowTitle('인삼품질 판독기기')
-        self.setWindowIcon(QIcon('Title.png'))
+        self.setWindowIcon(QIcon('./app_img/Title.png'))
         self.setGeometry(0, 0, 1000, 700)
         self.show()
 
