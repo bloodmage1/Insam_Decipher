@@ -1,39 +1,82 @@
-# 인삼 품질 판독기
+# Insam Decipher
 
-## 1. 시연
+## 1. Demonstration
+
+This repository contains a tutorial of Insam Quality Classifition using Pytorch.
 
 <img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/play_video.gif"/>
 
-인삼의 품질을 측정하는 모습을 간략히 나타낸 영상입니다.
+It is a video that briefly shows the quality of 'Insam'.
 
 <img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/insam_decipher_homescreen.png"/>
 
-어플을 실행시켰을 때, 실행되는 인상 품질 판독기의 첫화면입니다.
+This is the first screen of the impression Insam Decipher that runs when you run the application.
 
 ---
 <img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/load_image.png"/>
 
-다운받은 이미지에서 인삼 x-ray 사진을 불러올 수 있습니다.
+You can import a Insam x-ray photo from the downloaded image. It is Insam with the lowest(choiha), low(ha), middle(jung), and upper quality(sang), respectively.
 
 ---
 
 <img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/loaded_image.png"/>
 
-품질을 가진 인삼 데이터를 불러온 화면입니다.
+This is the screen that imported Insam image.
 
 ---
 
 <img src="https://github.com/bloodmage1/Insam_Decipher/blob/main/Demonstration/predicted_image.png"/>
 
-predict 버튼을 클릭하면 인삼의 품질을 확인할 수 있다. 불러 온 사진에서는 해당 x-ray 사진 속 인삼의 등급이 최하인 것을 알 수 있습니다.
+You can check the quality of Insam by clicking the 'predict' button. The imported photo shows that the Insam in the x-ray photo is the lowest.
 
-## 2. 개발환경
+## 2. Prepare Data
+
+Clone this repository with git clone https://github.com/bloodmage1/Insam_Decipher.git.
+
+Video file is in the './img'
+
+## 3. Setup the Environment
+
+The OS is ubuntu-18.04. A Dockerfile with all dependencies is provided. You can build it with
+
+```
+docker build -t your_container:your_tag .
+```
+
+## 4. Prepare Model
+
+1. Connect to Model
+```
+docker pull yongyongdie/my_insam_model:latest
+```
+
+2. Pull Model
+```
+docker cp your_container_name:/app/best_model.pth ./model_path_where_you_want
+```
+
+3. Setting
+```
+docker run -it -v /your_predicted_video:/app/test_result your_container
+```
+
+4. Enabling Python Environments
+
+```
+source Insam_cls/bin/activate
+```
+
+## 5. Running test scripts in Docker containers
+
+Quality classification can be performed using the GUI program(Insam Decipher). As shown in 1, an image file is imported and prediction proceeds.
+
+## 6. 개발환경
 
 - Window OS, Window 11
-- Python 3.12.4
+- Python 3.8.7
 - PySide6
 
-## 3. 디렉토리 구조
+## 7. 디렉토리 구조
 
 ```
 Insam_decipher/
@@ -49,9 +92,9 @@ Insam_decipher/
 
 ```
 
-## 4. 각 함수의 기능 설명
+## 8. 각 함수의 기능 설명
 
-### InsamDecipher 클래스
+### InsamDecipher
 
 - def main_screen(self)
   - 메인 화면 위젯을 생성하고, Picture_Screen과 Controller_Screen을 레이아웃에 추가합니다.
@@ -70,7 +113,7 @@ Insam_decipher/
 - next_tip(self) <- 분위기 환기용으로 만듬(없어도 됨)
   - 현재 팁 인덱스를 증가시키고, 팁 라벨에 다음 팁을 업데이트합니다. 팁 리스트의 끝에 도달하면 처음으로 돌아갑니다.
 
-### PictureScreen 클래스
+### PictureScreen
   - 사진 화면 위젯을 생성하고, 이미지 설명과 실제 이미지 화면을 추가합니다.
   - 설정된 레이아웃을 반환합니다.
 
@@ -80,7 +123,7 @@ Insam_decipher/
 - def Pimage_screen(self)
   - Matplotlib FigureCanvas를 사용하여 이미지를 표시할 화면을 생성하고 반환합니다.
 
-### ControllerScreen 클래스
+### ControllerScreen
   - 제어 화면 위젯을 생성하고, 이미지 로드, 인삼 관리, 기능 탭을 추가합니다.
   - 설정된 레이아웃을 반환합니다.
 
@@ -96,7 +139,7 @@ Insam_decipher/
   - 탭 위젯을 생성하고, 식물, 꽃, 열매에 대한 정보를 각각의 탭에 추가합니다.
   - 설정된 레이아웃을 반환합니다.
 
-### DescribeScreen 클래스
+### DescribeScreen
   - 설명 화면 위젯을 생성하고, 사진 정보와 팁 화면을 추가합니다.
   - 설정된 레이아웃을 반환합니다.
 
@@ -110,7 +153,7 @@ Insam_decipher/
 
 
 
-## 4. 학습결과
+## 9. 학습결과
 
 Yolov5를 사용하여 69.5%의 결과를 찾은 것을 확인하고, 왜 분류모델에 객체 탐지에 적합한 Yolo를 쓰는 것보다 최신 분류모델을 쓰는 것이 더 결과가 잘 나올 것 같아, 직접 사용해 보고 그 것을 쉽게 확인할 수 있도록 PySide에 담았다.
 
@@ -118,5 +161,11 @@ Yolov5를 사용하여 69.5%의 결과를 찾은 것을 확인하고, 왜 분류
 
 
 
-## 5. 데이터
+## 10. OpenSource Data
 [https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=71319] 이 곳에서 데이터를 확인하실 수 있습니다.
+
+## 11. Errors I encountered
+
+If an error occurs, please contact us via email.
+
+breakprejudice@naver.com
