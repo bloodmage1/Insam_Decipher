@@ -160,7 +160,7 @@ I checked that I found 69.5% of the results using Yolov5, and I think it would b
 It was harder than expected to find unusual features in the image even when visually inspected by my eyes. so instead of reducing the image size to 256x256, we shortened the learning time by increasing the batch size and reducing the learning rate. However, the learning accuracy could be increased to 85.9%
 
 ## 10. OpenSource Data
-[https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=71319] 이 곳에서 데이터를 확인하실 수 있습니다.
+[https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=71319] 
 
 ## 11. Errors I encountered
 
