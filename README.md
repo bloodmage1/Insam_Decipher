@@ -66,7 +66,7 @@ docker run -it -v /your_predicted_video:/app/test_result your_container
 source Insam_cls/bin/activate
 ```
 
-## 5. Running test scripts in Docker containers
+## 5. Running Insam Decipher
 
 Quality classification can be performed using the GUI program(Insam Decipher). As shown in 1, an image file is imported and prediction proceeds.
 
