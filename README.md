@@ -70,13 +70,13 @@ source Insam_cls/bin/activate
 
 Quality classification can be performed using the GUI program(Insam Decipher). As shown in 1, an image file is imported and prediction proceeds.
 
-## 6. 개발환경
+## 6. Development Environment
 
 - Window OS, Window 11
 - Python 3.8.7
 - PySide6
 
-## 7. 디렉토리 구조
+## 7. Directory Structure
 
 ```
 Insam_decipher/
@@ -153,13 +153,11 @@ Insam_decipher/
 
 
 
-## 9. 학습결과
+## 9. Reusults
 
-Yolov5를 사용하여 69.5%의 결과를 찾은 것을 확인하고, 왜 분류모델에 객체 탐지에 적합한 Yolo를 쓰는 것보다 최신 분류모델을 쓰는 것이 더 결과가 잘 나올 것 같아, 직접 사용해 보고 그 것을 쉽게 확인할 수 있도록 PySide에 담았다.
+I checked that I found 69.5% of the results using Yolov5, and I think it would be better to use the latest classification model than to use Yolo because it is suitable for object detection. so I put it on PySide so that I can use it myself and check it easily.
 
-생각보다 육안으로 확인해보아도 이미지에 유별난 특징을 찾기 힘들어, 이미지의 크기를 256X256 까지 줄이는 대신 batch_size를 늘리고 학습률은 줄여 학습시간을 단축시켰다. 하지만 학습 정확도는 85.9% 까지 늘릴 수 있었다.
-
-
+It was harder than expected to find unusual features in the image even when visually inspected by my eyes. so instead of reducing the image size to 256x256, we shortened the learning time by increasing the batch size and reducing the learning rate. However, the learning accuracy could be increased to 85.9%
 
 ## 10. OpenSource Data
 [https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=71319] 이 곳에서 데이터를 확인하실 수 있습니다.
